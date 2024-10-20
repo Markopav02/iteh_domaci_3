@@ -94,7 +94,7 @@
                     <!-- Dugmad za akcije na dnu -->
                     <div class="row">
                         <div class="col-md-6">
-                            <button id="btn-izmeni" type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#izmeniModal" disabled>Izmeni</button>
+                            <button id="btn-izmeni" type="button" name="submit" value="Izmeni" class="btn btn-warning btn-block" data-toggle="modal" data-target="#izmeniModal" disabled>Izmeni</button>
                         </div>
                         <div class="col-md-6">
                             <button id="btn-obrisi" type="submit" name="submit" value="Obrisi" class="btn btn-danger btn-block" disabled>Obrisi</button>
@@ -146,7 +146,7 @@
                         <h3 class="modal-title text-center">Izmeni kolokvijum</h3>
                     </div>
                     <div class="modal-body">
-                        <form action="#" method="post" id="izmeniForm">
+                        <form action="obrada.php" method="post" id="izmeniForm">
                             <input id="id_predmeta" type="hidden" name="id_predmeta" readonly>
                             <div class="form-group">
                                 <label>Predmet</label>
@@ -164,7 +164,7 @@
                                 <label>Datum</label>
                                 <input id="datum" type="date" name="datum" class="form-control" required>
                             </div>
-                            <button type="submit" name="submit" value="izmeni" id="btnIzmeniModal" class="btn btn-success btn-block">Izmeni</button>
+                            <button type="submit" name="submit" value="Izmeni" id="btnIzmeniModal" class="btn btn-success btn-block">Izmeni</button>
                         </form>
                     </div>
                 </div>
@@ -189,13 +189,13 @@
             let sala = selectedRow.find('td:eq(2)').text();
             let datum = selectedRow.find('td:eq(3)').text();
 
-            // let id = $(this).val();
+             let id = $(this).val();
 
-            // $('#id_predmeta').val(id);
-            // $('#predmet').val(predmet);
-            // $('#katedra').val(katedra);
-            // $('#sala').val(sala);
-            // $('#datum').val(datum);
+             $('#id_predmeta').val(id);
+             $('#predmet').val(predmet);
+             $('#katedra').val(katedra);
+             $('#sala').val(sala);
+             $('#datum').val(datum);
         });
     </script>
 </body>
